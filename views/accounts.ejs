@@ -1,0 +1,290 @@
+<%- include('partials/header') %>
+
+<div id="alert-container"></div>
+
+<div class="stats-grid" style="grid-template-columns: 2fr 1fr;">
+  
+  <!-- Lista de Contas Cadastradas -->
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Suas Contas Conectadas</h3>
+    </div>
+    
+    <div class="table-responsive">
+      <table id="accounts-table">
+        <thead>
+          <tr>
+            <th>Apelido</th>
+            <th>ID do Aplicativo</th>
+            <th>E-mails de Alerta</th>
+            <th>Status Token</th>
+            <th>Ações Webhook</th>
+            <th>Gerenciar</th>
+          </tr>
+        </thead>
+        <tbody id="accounts-list">
+          <tr>
+            <td colspan="6" style="text-align: center; color: var(--text-secondary);">Carregando contas...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Formulário de Cadastro -->
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Adicionar Conta ML</h3>
+    </div>
+    <form id="add-account-form">
+      <div class="form-group">
+        <label for="acc-nickname">Apelido da Conta</label>
+        <input type="text" id="acc-nickname" class="form-control" placeholder="Ex: Mercado Livre - Loja A" required>
+      </div>
+      <div class="form-group">
+        <label for="acc-app-id">ID do Aplicativo (APP_ID)</label>
+        <input type="text" id="acc-app-id" class="form-control" placeholder="Ex: 7751052017023270" required>
+      </div>
+      <div class="form-group">
+        <label for="acc-secret-key">Chave Secreta (SECRET_KEY)</label>
+        <input type="password" id="acc-secret-key" class="form-control" placeholder="••••••••••••••••••••••••" required>
+      </div>
+      <div class="form-group">
+        <label for="acc-emails">E-mails p/ Alerta (separados por vírgula)</label>
+        <input type="text" id="acc-emails" class="form-control" placeholder="socio1@email.com, socio2@email.com">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Salvar Configurações</button>
+    </form>
+  </div>
+
+</div>
+
+<!-- Modal de Edição de Conta -->
+<div id="edit-modal" class="auth-wrapper" style="display: none; position: fixed; top: 0; left: 0; z-index: 1000; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(4px);">
+  <div class="auth-card" style="max-width: 500px;">
+    <div class="auth-header">
+      <h2>Editar Conta ML</h2>
+      <p>Atualize as credenciais e configurações</p>
+    </div>
+    <form id="edit-account-form">
+      <input type="hidden" id="edit-id">
+      <div class="form-group">
+        <label for="edit-nickname">Apelido</label>
+        <input type="text" id="edit-nickname" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="edit-app-id">ID do Aplicativo (APP_ID)</label>
+        <input type="text" id="edit-app-id" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="edit-secret-key">Chave Secreta (Deixe vazio para manter atual)</label>
+        <input type="password" id="edit-secret-key" class="form-control" placeholder="Oculto - Digite para alterar">
+      </div>
+      <div class="form-group">
+        <label for="edit-emails">E-mails de Alerta (separados por vírgula)</label>
+        <input type="text" id="edit-emails" class="form-control">
+      </div>
+      <div style="display: flex; gap: 15px; margin-top: 20px;">
+        <button type="submit" class="btn btn-primary" style="flex: 1;">Salvar</button>
+        <button type="button" class="btn btn-secondary" onclick="closeEditModal()" style="flex: 1;">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const accountsList = document.getElementById('accounts-list');
+  const addAccountForm = document.getElementById('add-account-form');
+  const editModal = document.getElementById('edit-modal');
+  const editAccountForm = document.getElementById('edit-account-form');
+
+  // Exibir alertas na tela
+  const showAlert = (message, type = 'success') => {
+    const container = document.getElementById('alert-container');
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type === 'success' ? 'success' : 'error'}`;
+    alertDiv.innerHTML = `<span>${message}</span><button onclick="this.parentElement.remove()" style="background:none; border:none; color:inherit; font-size:16px; cursor:pointer;">×</button>`;
+    container.appendChild(alertDiv);
+    setTimeout(() => alertDiv.remove(), 4000);
+  };
+
+  // Carregar lista de contas do ML
+  const loadAccounts = async () => {
+    try {
+      const response = await fetch('/api/mlAccounts');
+      if (!response.ok) throw new Error();
+      
+      const accounts = await response.json();
+      
+      if (accounts.length === 0) {
+        accountsList.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-secondary);">Nenhuma conta configurada no momento. Cadastre ao lado.</td></tr>`;
+        return;
+      }
+
+      accountsList.innerHTML = accounts.map(acc => `
+        <tr>
+          <td>
+            <strong>${acc.nickname}</strong>
+            ${acc.ml_user_id ? `<br><small style="color:var(--text-secondary);">Vendedor ID: ${acc.ml_user_id}</small>` : '<br><small style="color:var(--warning);">Não autenticado</small>'}
+          </td>
+          <td><code style="background-color: #f1f3f5; border: 1px solid var(--border-light); padding: 2px 6px; border-radius: 4px; color: var(--text-primary); font-size:12px;">${acc.app_id}</code></td>
+          <td style="max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${acc.notification_emails || ''}">
+            ${acc.notification_emails || '<span style="color:var(--text-light);">Nenhum</span>'}
+          </td>
+          <td>
+            ${acc.has_token 
+              ? `<span class="badge badge-success">Conectado</span>` 
+              : `<span class="badge badge-danger">Requer Login</span>`}
+          </td>
+          <td>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; cursor:pointer;">
+                <input type="checkbox" ${acc.notifications_enabled ? 'checked' : ''} onchange="toggleSetting(${acc.id}, 'notifications_enabled', this.checked)">
+                Processar Vendas
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; font-size:12px; cursor:pointer;">
+                <input type="checkbox" ${acc.notify_other_topics ? 'checked' : ''} onchange="toggleSetting(${acc.id}, 'notify_other_topics', this.checked)">
+                Alertas Outros Tópicos
+              </label>
+            </div>
+          </td>
+          <td>
+            <div style="display:flex; gap:8px;">
+              <button onclick="authorizeAccount(${acc.id})" class="btn btn-primary btn-sm" title="Conectar ao Mercado Livre" style="display:inline-flex; align-items:center; padding: 4px 8px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> Logar
+              </button>
+              <button onclick="openEditModal(${JSON.stringify(acc).replace(/"/g, '&quot;')})" class="btn btn-secondary btn-sm" title="Editar Credenciais" style="display:inline-flex; align-items:center; padding: 4px 8px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+              </button>
+              <button onclick="deleteAccount(${acc.id})" class="btn btn-danger btn-sm" title="Deletar" style="display:inline-flex; align-items:center; padding: 4px 8px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    } catch (err) {
+      accountsList.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--danger);">Falha ao obter lista de contas.</td></tr>`;
+    }
+  };
+
+  // Alternar configuração rápida
+  const toggleSetting = async (id, field, value) => {
+    try {
+      const updates = {};
+      updates[field] = value ? 1 : 0;
+
+      const response = await fetch(`/api/mlAccounts/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updates)
+      });
+
+      if (!response.ok) throw new Error();
+      showAlert('Configurações salvas!');
+    } catch (err) {
+      showAlert('Falha ao atualizar configurações.', 'error');
+      loadAccounts();
+    }
+  };
+
+  // Adicionar Conta
+  addAccountForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const nickname = document.getElementById('acc-nickname').value;
+    const app_id = document.getElementById('acc-app-id').value;
+    const secret_key = document.getElementById('acc-secret-key').value;
+    const notification_emails = document.getElementById('acc-emails').value;
+
+    try {
+      const response = await fetch('/api/mlAccounts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nickname, app_id, secret_key, notification_emails })
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error);
+      }
+
+      showAlert('Conta adicionada com sucesso!');
+      addAccountForm.reset();
+      loadAccounts();
+    } catch (err) {
+      showAlert(err.message || 'Erro ao salvar conta.', 'error');
+    }
+  });
+
+  // Deletar Conta
+  const deleteAccount = async (id) => {
+    if (!confirm('Deseja realmente excluir esta conta? Isso removerá todos os fluxos e logs vinculados.')) return;
+    try {
+      const response = await fetch(`/api/mlAccounts/${id}`, { method: 'DELETE' });
+      if (!response.ok) throw new Error();
+      showAlert('Conta excluída com sucesso!');
+      loadAccounts();
+    } catch (err) {
+      showAlert('Falha ao excluir conta.', 'error');
+    }
+  };
+
+  // Redirecionar para o fluxo do Mercado Livre
+  const authorizeAccount = async (id) => {
+    try {
+      const response = await fetch(`/api/mlAccounts/${id}/auth-url`);
+      const data = await response.json();
+      if (data.url) {
+        window.open(data.url, '_blank');
+      }
+    } catch (err) {
+      showAlert('Falha ao gerar link do Mercado Livre.', 'error');
+    }
+  };
+
+  // Editar Conta Modal
+  const openEditModal = (acc) => {
+    document.getElementById('edit-id').value = acc.id;
+    document.getElementById('edit-nickname').value = acc.nickname;
+    document.getElementById('edit-app-id').value = acc.app_id;
+    document.getElementById('edit-secret-key').value = ''; // Mantém vazio
+    document.getElementById('edit-emails').value = acc.notification_emails || '';
+    editModal.style.display = 'flex';
+  };
+
+  const closeEditModal = () => {
+    editModal.style.display = 'none';
+  };
+
+  editAccountForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('edit-id').value;
+    const nickname = document.getElementById('edit-nickname').value;
+    const app_id = document.getElementById('edit-app-id').value;
+    const secret_key = document.getElementById('edit-secret-key').value;
+    const notification_emails = document.getElementById('edit-emails').value;
+
+    const updates = { nickname, app_id, notification_emails };
+    if (secret_key) updates.secret_key = secret_key;
+
+    try {
+      const response = await fetch(`/api/mlAccounts/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updates)
+      });
+
+      if (!response.ok) throw new Error();
+      showAlert('Credenciais atualizadas com sucesso!');
+      closeEditModal();
+      loadAccounts();
+    } catch (err) {
+      showAlert('Falha ao salvar alterações.', 'error');
+    }
+  });
+
+  // Inicializar
+  loadAccounts();
+</script>
+
+<%- include('partials/footer') %>

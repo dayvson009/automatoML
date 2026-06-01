@@ -1,0 +1,149 @@
+<%- include('partials/header') %>
+
+<div class="card">
+  <div class="card-header" style="display:flex; justify-content:space-between; align-items:center;">
+    <h3 class="card-title">Monitor de Notificações e Atividades</h3>
+    <button onclick="loadLogs()" class="btn btn-secondary btn-sm" style="display:inline-flex; align-items:center;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+      Atualizar Logs
+    </button>
+  </div>
+
+  <!-- Barra de Filtros -->
+  <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+    <div style="position: relative; flex-grow: 1; max-width: 500px;">
+      <input type="text" id="log-search" oninput="filterLogs()" class="form-control" placeholder="Filtrar logs por ID de pedido, conta ou mensagem..." style="padding-left: 35px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-light);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </div>
+    <select id="log-status-filter" onchange="filterLogs()" class="form-control" style="max-width: 200px;">
+      <option value="">Todos os Status</option>
+      <option value="success">Sucesso</option>
+      <option value="error">Erros</option>
+      <option value="ignored">Ignorados</option>
+      <option value="processing">Em processamento</option>
+      <option value="info">Informação</option>
+    </select>
+  </div>
+
+  <!-- Tabela de Logs -->
+  <div class="table-responsive">
+    <table id="logs-table">
+      <thead>
+        <tr>
+          <th>Data/Hora</th>
+          <th>Conta ML</th>
+          <th>ID Pedido</th>
+          <th>Tópico</th>
+          <th>Status</th>
+          <th>Descrição/Detalhes</th>
+        </tr>
+      </thead>
+      <tbody id="logs-list">
+        <tr>
+          <td colspan="6" style="text-align: center; color: var(--text-secondary);">Carregando logs de atividades...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  let allLogs = [];
+
+  // Formatar data localmente
+  const formatDate = (isoString) => {
+    try {
+      const date = new Date(isoString);
+      return date.toLocaleString('pt-BR');
+    } catch (e) {
+      return isoString;
+    }
+  };
+
+  // Carregar os logs da API
+  const loadLogs = async () => {
+    const logsList = document.getElementById('logs-list');
+    try {
+      const response = await fetch('/api/logs');
+      if (!response.ok) throw new Error();
+      allLogs = await response.json();
+      renderLogs(allLogs);
+    } catch (err) {
+      logsList.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--danger);">Falha ao obter logs de atividades.</td></tr>`;
+    }
+  };
+
+  // Renderizar a tabela
+  const renderLogs = (logs) => {
+    const logsList = document.getElementById('logs-list');
+    
+    if (logs.length === 0) {
+      logsList.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-secondary);">Nenhum log encontrado para exibição.</td></tr>`;
+      return;
+    }
+
+    logsList.innerHTML = logs.map(log => `
+      <tr>
+        <td style="white-space: nowrap; color: var(--text-secondary); font-size: 13px;">${formatDate(log.created_at)}</td>
+        <td><strong>${log.account_nickname}</strong></td>
+        <td>
+          ${log.order_id 
+            ? `<code style="background-color: #f1f3f5; border: 1px solid var(--border-light); padding: 2px 6px; border-radius: 4px; color: var(--text-primary); font-size:12px;">${log.order_id}</code>` 
+            : '<span style="color:var(--text-light);">N/A</span>'}
+        </td>
+        <td><span style="font-size:13px; color:var(--ml-blue); font-weight: 500;">${log.topic}</span></td>
+        <td>
+          ${log.status === 'success' 
+            ? `<span class="badge badge-success">Sucesso</span>` 
+            : log.status === 'error' 
+            ? `<span class="badge badge-danger">Erro</span>` 
+            : log.status === 'ignored' 
+            ? `<span class="badge badge-warning">Ignorado</span>` 
+            : `<span class="badge badge-info">${log.status}</span>`}
+        </td>
+        <td style="font-size: 14px; line-height: 1.4;">${escapeHtml(log.log_message || '')}</td>
+      </tr>
+    `).join('');
+  };
+
+  // Filtrar logs localmente
+  const filterLogs = () => {
+    const query = document.getElementById('log-search').value.toLowerCase();
+    const statusFilter = document.getElementById('log-status-filter').value;
+
+    const filtered = allLogs.filter(log => {
+      const matchesStatus = !statusFilter || log.status === statusFilter;
+      
+      const textToSearch = [
+        log.account_nickname,
+        log.order_id,
+        log.topic,
+        log.log_message
+      ].join(' ').toLowerCase();
+
+      const matchesSearch = !query || textToSearch.includes(query);
+
+      return matchesStatus && matchesSearch;
+    });
+
+    renderLogs(filtered);
+  };
+
+  // Helper para escapar HTML
+  const escapeHtml = (text) => {
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  };
+
+  // Inicializar
+  loadLogs();
+  
+  // Auto-refresh a cada 10 segundos para ver logs em tempo real
+  setInterval(loadLogs, 10000);
+</script>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,175 @@
+<%- include('partials/header') %>
+
+<div id="alert-container"></div>
+
+<!-- Configurações Globais -->
+<div class="card" style="margin-bottom: 30px;">
+  <div class="card-header">
+    <h3 class="card-title">Configurações Globais do Sistema</h3>
+  </div>
+  <form id="global-settings-form" style="padding: 5px 0;">
+    <div class="form-group">
+      <label for="global-redirect-uri">URI de Redirecionamento Global (Mercado Livre Redirect URI)</label>
+      <input type="url" id="global-redirect-uri" class="form-control" placeholder="https://seu-subdominio.ngrok-free.app/tg" required>
+      <small style="color: var(--text-secondary); display: block; margin-top: 6px; font-size: 12px; line-height: 1.4;">
+        Esta URI é utilizada para o processo de autorização OAuth do Mercado Livre em todas as contas. Certifique-se de cadastrar exatamente a mesma URL no painel do <strong>Mercado Livre Developer Center</strong>.
+      </small>
+    </div>
+    <button type="submit" class="btn btn-primary" style="min-width: 150px;">Salvar Configurações</button>
+  </form>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Gerenciador de Usuários (Administração Master)</h3>
+  </div>
+
+  <div class="table-responsive">
+    <table id="users-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>E-mail do Usuário</th>
+          <th>Papel (Role)</th>
+          <th>Data de Cadastro</th>
+          <th>Status de Acesso</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="users-list">
+        <tr>
+          <td colspan="6" style="text-align: center; color: var(--text-secondary);">Carregando usuários...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  const usersList = document.getElementById('users-list');
+  const settingsForm = document.getElementById('global-settings-form');
+  const redirectUriInput = document.getElementById('global-redirect-uri');
+
+  // Alertas
+  const showAlert = (message, type = 'success') => {
+    const container = document.getElementById('alert-container');
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type === 'success' ? 'success' : 'error'}`;
+    alertDiv.innerHTML = `<span>${message}</span><button onclick="this.parentElement.remove()" style="background:none; border:none; color:inherit; font-size:16px; cursor:pointer;">×</button>`;
+    container.appendChild(alertDiv);
+    setTimeout(() => alertDiv.remove(), 4000);
+  };
+
+  // Formatar data
+  const formatDate = (isoString) => {
+    try {
+      const date = new Date(isoString);
+      return date.toLocaleDateString('pt-BR');
+    } catch(e) {
+      return isoString;
+    }
+  };
+
+  // Carregar configurações globais
+  const loadSettings = async () => {
+    try {
+      const response = await fetch('/api/admin/settings');
+      if (!response.ok) throw new Error();
+      const settings = await response.json();
+      if (settings && settings.redirect_uri) {
+        redirectUriInput.value = settings.redirect_uri;
+      }
+    } catch (err) {
+      showAlert('Falha ao obter configurações globais.', 'error');
+    }
+  };
+
+  // Salvar configurações globais
+  settingsForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const redirect_uri = redirectUriInput.value.trim();
+
+    try {
+      const response = await fetch('/api/admin/settings', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ redirect_uri })
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Erro ao salvar configurações.');
+      }
+
+      showAlert(data.message || 'Configurações salvas com sucesso!');
+    } catch (err) {
+      showAlert(err.message, 'error');
+    }
+  });
+
+  // Carregar lista de usuários
+  const loadUsers = async () => {
+    try {
+      const response = await fetch('/api/admin/users');
+      if (!response.ok) throw new Error();
+      const users = await response.json();
+
+      usersList.innerHTML = users.map(user => `
+        <tr>
+          <td><small style="color:var(--text-secondary);">${user.id}</small></td>
+          <td><strong>${user.email}</strong></td>
+          <td>
+            <span class="badge ${user.role === 'admin' ? 'badge-info' : 'badge-secondary'}">
+               ${user.role === 'admin' ? 'Master Admin' : 'Cliente'}
+            </span>
+          </td>
+          <td>${formatDate(user.created_at)}</td>
+          <td>
+            ${user.is_active === 1 
+              ? `<span class="badge badge-success">Ativo</span>` 
+              : `<span class="badge badge-danger">Inativo / Bloqueado</span>`}
+          </td>
+          <td>
+            ${user.role === 'admin' 
+              ? `<span style="font-size:12px; color:var(--text-light);">Protegido</span>`
+              : `<button onclick="toggleUserActive(${user.id})" class="btn ${user.is_active === 1 ? 'btn-danger' : 'btn-primary'} btn-sm" style="display:inline-flex; align-items:center;">
+                  ${user.is_active === 1 
+                    ? `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Desativar` 
+                    : `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Ativar`
+                  }
+                 </button>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    } catch (err) {
+      usersList.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--danger);">Falha ao obter lista de usuários.</td></tr>`;
+    }
+  };
+
+  // Alternar Status de Atividade
+  const toggleUserActive = async (userId) => {
+    try {
+      const response = await fetch(`/api/admin/users/${userId}/toggle-active`, {
+        method: 'PUT'
+      });
+
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error);
+      }
+
+      showAlert(data.message);
+      loadUsers();
+    } catch (err) {
+      showAlert(err.message || 'Erro ao alterar status do usuário.', 'error');
+    }
+  };
+
+  // Inicializar
+  loadSettings();
+  loadUsers();
+</script>
+
+<%- include('partials/footer') %>

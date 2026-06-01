@@ -1,0 +1,99 @@
+<%- include('partials/header') %>
+
+<!-- Grid de Estatísticas -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <span class="label">Contas Mercado Livre</span>
+    <span class="value"><%= accountsCount %></span>
+  </div>
+  <div class="stat-card">
+    <span class="label">Programas / Fluxos</span>
+    <span class="value"><%= flowsCount %></span>
+  </div>
+  <div class="stat-card" style="border-left: 4px solid var(--success);">
+    <span class="label">Mensagens Enviadas</span>
+    <span class="value" style="color: var(--success);"><%= successCount %></span>
+  </div>
+  <div class="stat-card" style="border-left: 4px solid var(--danger);">
+    <span class="label">Falhas / Erros</span>
+    <span class="value" style="color: var(--danger);"><%= errorCount %></span>
+  </div>
+</div>
+
+<div class="stats-grid" style="grid-template-columns: 2fr 1fr;">
+  <!-- Seção de logs recentes -->
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Atividades Recentes</h3>
+      <a href="/logs" class="btn btn-secondary btn-sm">Ver Todos</a>
+    </div>
+    <div class="table-responsive">
+      <% if (recentLogs.length === 0) { %>
+        <p style="color: var(--text-secondary); text-align: center; padding: 20px 0;">Nenhuma atividade recente registrada.</p>
+      <% } else { %>
+        <table>
+          <thead>
+            <tr>
+              <th>Conta</th>
+              <th>Pedido</th>
+              <th>Tópico</th>
+              <th>Status</th>
+              <th>Mensagem</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% recentLogs.forEach(log => { %>
+              <tr>
+                <td><strong><%= log.account_nickname %></strong></td>
+                <td><code style="background-color: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;"><%= log.order_id || 'N/A' %></code></td>
+                <td><%= log.topic %></td>
+                <td>
+                  <% if (log.status === 'success') { %>
+                    <span class="badge badge-success">Sucesso</span>
+                  <% } else if (log.status === 'error') { %>
+                    <span class="badge badge-danger">Erro</span>
+                  <% } else if (log.status === 'ignored') { %>
+                    <span class="badge badge-warning">Ignorado</span>
+                  <% } else { %>
+                    <span class="badge badge-info"><%= log.status %></span>
+                  <% } %>
+                </td>
+                <td style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><%= log.log_message %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Como funciona / Tutorial rápido -->
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Como Configurar</h3>
+    </div>
+    <div style="font-size: 14px; line-height: 1.6; display: flex; flex-direction: column; gap: 15px;">
+      <div>
+        <strong style="color: var(--ml-blue);">1. Crie o aplicativo no ML</strong>
+        <p style="color: var(--text-secondary);">Acesse o Mercado Livre Dev Center e registre um app. Defina as permissões de mensagens pós-venda.</p>
+      </div>
+      <div>
+        <strong style="color: var(--ml-blue);">2. Configure as URLs do App</strong>
+        <p style="color: var(--text-secondary);">
+          <strong>Redirect URL:</strong> <code style="color: var(--ml-blue);"><%= baseUrl %>/tg</code><br>
+          <strong>Webhook URL:</strong> <code style="color: var(--ml-blue);"><%= baseUrl %>/notificacao</code>
+        </p>
+      </div>
+      <div>
+        <strong style="color: var(--ml-blue);">3. Conecte sua conta</strong>
+        <p style="color: var(--text-secondary);">Cadastre o aplicativo em "Contas Mercado Livre" e clique em "Autorizar".</p>
+      </div>
+      <div>
+        <strong style="color: var(--ml-blue);">4. Crie seus Fluxos</strong>
+        <p style="color: var(--text-secondary);">Adicione programas associados ao ID correspondente do seu anúncio do Mercado Livre (ex: <code>MLB2077665752</code>).</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

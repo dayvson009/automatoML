@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    container_name: ml-automato
+
+    restart: unless-stopped
+
+    ports:
+      - "4302:3000"
+
+    env_file:
+      - .env

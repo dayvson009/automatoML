@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ML automato</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      
+      <!-- Seção de Login -->
+      <div id="login-section">
+        <div class="auth-header">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px;">
+            <svg width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" fill="#3483fa" stroke="#fff159" stroke-width="2"/>
+              <path d="M21 8L11 22H19L17 32L29 16H21L21 8Z" fill="#fff159" stroke="#fff159" stroke-width="1" stroke-linejoin="round"/>
+            </svg>
+            <h1 style="margin: 0; font-size: 24px; font-weight: 700; color: var(--text-primary);">ML automato</h1>
+          </div>
+          <p>Insira suas credenciais para acessar o painel</p>
+        </div>
+
+        <div id="login-error" class="alert alert-error" style="display: none;"></div>
+
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">E-mail</label>
+            <input type="email" id="login-email" class="form-control" placeholder="exemplo@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Senha</label>
+            <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Entrar</button>
+        </form>
+
+        <p style="text-align: center; margin-top: 20px; font-size: 14px; color: var(--text-secondary);">
+          Não tem uma conta? <a href="#" id="go-to-register" style="color: var(--ml-blue); text-decoration: none; font-weight: 600;">Cadastre-se</a>
+        </p>
+      </div>
+
+      <!-- Seção de Registro -->
+      <div id="register-section" style="display: none;">
+        <div class="auth-header">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px;">
+            <svg width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" fill="#3483fa" stroke="#fff159" stroke-width="2"/>
+              <path d="M21 8L11 22H19L17 32L29 16H21L21 8Z" fill="#fff159" stroke="#fff159" stroke-width="1" stroke-linejoin="round"/>
+            </svg>
+            <h1 style="margin: 0; font-size: 24px; font-weight: 700; color: var(--text-primary);">Criar Conta</h1>
+          </div>
+          <p>Cadastre-se no Mini-SaaS de Atendimento</p>
+        </div>
+
+        <div id="register-error" class="alert alert-error" style="display: none;"></div>
+        <div id="register-success" class="alert alert-success" style="display: none;"></div>
+
+        <form id="register-form">
+          <div class="form-group">
+            <label for="register-email">E-mail</label>
+            <input type="email" id="register-email" class="form-control" placeholder="exemplo@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="register-password">Senha</label>
+            <input type="password" id="register-password" class="form-control" placeholder="••••••••" required>
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password">Confirmar Senha</label>
+            <input type="password" id="register-confirm-password" class="form-control" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Criar Conta</button>
+        </form>
+
+        <p style="text-align: center; margin-top: 20px; font-size: 14px; color: var(--text-secondary);">
+          Já possui conta? <a href="#" id="go-to-login" style="color: var(--ml-blue); text-decoration: none; font-weight: 600;">Fazer Login</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const loginSection = document.getElementById('login-section');
+    const registerSection = document.getElementById('register-section');
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+
+    // Verificar se há erro de inatividade na URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('error') === 'inactive') {
+      const errorDiv = document.getElementById('login-error');
+      errorDiv.innerText = 'Sua conta está inativa ou desativada pelo administrador. Entre em contato para reativar.';
+      errorDiv.style.display = 'block';
+    }
+
+    // Alternar telas
+    document.getElementById('go-to-register').addEventListener('click', (e) => {
+      e.preventDefault();
+      loginSection.style.display = 'none';
+      registerSection.style.display = 'block';
+    });
+
+    document.getElementById('go-to-login').addEventListener('click', (e) => {
+      e.preventDefault();
+      registerSection.style.display = 'none';
+      loginSection.style.display = 'block';
+    });
+
+    // Enviar Login
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      const errorDiv = document.getElementById('login-error');
+      errorDiv.style.display = 'none';
+
+      try {
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          errorDiv.innerText = data.error || 'Erro ao realizar login.';
+          errorDiv.style.display = 'block';
+        } else {
+          window.location.href = '/dashboard';
+        }
+      } catch (err) {
+        errorDiv.innerText = 'Erro de conexão com o servidor.';
+        errorDiv.style.display = 'block';
+      }
+    });
+
+    // Enviar Registro
+    registerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('register-email').value;
+      const password = document.getElementById('register-password').value;
+      const confirmPassword = document.getElementById('register-confirm-password').value;
+      const errorDiv = document.getElementById('register-error');
+      const successDiv = document.getElementById('register-success');
+      
+      errorDiv.style.display = 'none';
+      successDiv.style.display = 'none';
+
+      if (password !== confirmPassword) {
+        errorDiv.innerText = 'As senhas não coincidem.';
+        errorDiv.style.display = 'block';
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          errorDiv.innerText = data.error || 'Erro ao criar conta.';
+          errorDiv.style.display = 'block';
+        } else {
+          successDiv.innerText = data.message || 'Conta criada com sucesso!';
+          successDiv.style.display = 'block';
+          registerForm.reset();
+          setTimeout(() => {
+            registerSection.style.display = 'none';
+            loginSection.style.display = 'block';
+            document.getElementById('login-email').value = email;
+          }, 1500);
+        }
+      } catch (err) {
+        errorDiv.innerText = 'Erro de conexão com o servidor.';
+        errorDiv.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

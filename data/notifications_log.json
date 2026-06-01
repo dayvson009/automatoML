@@ -1,0 +1,528 @@
+[
+  {
+    "id": 1,
+    "created_at": "2026-05-22T19:26:20.189Z",
+    "ml_account_id": 1,
+    "order_id": "2000003508172799",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 2,
+    "created_at": "2026-05-25T12:36:54.337Z",
+    "ml_account_id": 1,
+    "topic": "auth_refresh",
+    "status": "error",
+    "log_message": "Falha ao renovar token de acesso: Request failed with status code 400"
+  },
+  {
+    "id": 3,
+    "created_at": "2026-05-25T12:51:56.206Z",
+    "ml_account_id": 1,
+    "topic": "auth_refresh",
+    "status": "error",
+    "log_message": "Falha ao renovar token de acesso: Request failed with status code 400"
+  },
+  {
+    "id": 4,
+    "created_at": "2026-05-25T13:06:57.558Z",
+    "ml_account_id": 1,
+    "topic": "auth_refresh",
+    "status": "error",
+    "log_message": "Falha ao renovar token de acesso: Request failed with status code 400"
+  },
+  {
+    "id": 5,
+    "created_at": "2026-05-25T13:36:47.155Z",
+    "ml_account_id": 1,
+    "topic": "auth_refresh",
+    "status": "error",
+    "log_message": "Falha ao renovar token de acesso: Request failed with status code 400"
+  },
+  {
+    "id": 6,
+    "created_at": "2026-05-25T13:51:49.479Z",
+    "ml_account_id": 1,
+    "topic": "auth_refresh",
+    "status": "error",
+    "log_message": "Falha ao renovar token de acesso: Request failed with status code 400"
+  },
+  {
+    "id": 7,
+    "created_at": "2026-05-25T14:06:50.922Z",
+    "ml_account_id": 1,
+    "topic": "auth_refresh",
+    "status": "error",
+    "log_message": "Falha ao renovar token de acesso: Request failed with status code 400"
+  },
+  {
+    "id": 8,
+    "created_at": "2026-05-25T14:26:08.524Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016555250828/feedback"
+  },
+  {
+    "id": 9,
+    "created_at": "2026-05-25T14:26:14.183Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016555250828/feedback"
+  },
+  {
+    "id": 10,
+    "created_at": "2026-05-25T14:26:32.934Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016555110262/feedback"
+  },
+  {
+    "id": 11,
+    "created_at": "2026-05-25T14:26:37.290Z",
+    "ml_account_id": 1,
+    "order_id": "2000016555110262",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 12,
+    "created_at": "2026-05-25T14:26:38.299Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016555110262/feedback"
+  },
+  {
+    "id": 13,
+    "created_at": "2026-05-25T14:27:14.495Z",
+    "ml_account_id": 1,
+    "order_id": "2000016555250828",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 14,
+    "created_at": "2026-05-25T14:27:30.740Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016591503770/feedback"
+  },
+  {
+    "id": 15,
+    "created_at": "2026-05-25T14:27:36.018Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016591503770/feedback"
+  },
+  {
+    "id": 16,
+    "created_at": "2026-05-25T14:29:53.530Z",
+    "ml_account_id": 1,
+    "order_id": "2000016534206106",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 17,
+    "created_at": "2026-05-25T14:29:57.252Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016522838320/feedback"
+  },
+  {
+    "id": 18,
+    "created_at": "2026-05-25T14:30:01.602Z",
+    "ml_account_id": 1,
+    "order_id": "2000016522838320",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 19,
+    "created_at": "2026-05-25T14:30:03.186Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016522838320/feedback"
+  },
+  {
+    "id": 20,
+    "created_at": "2026-05-25T14:30:56.564Z",
+    "ml_account_id": 1,
+    "order_id": "2000016555110262",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 21,
+    "created_at": "2026-05-25T14:30:56.908Z",
+    "ml_account_id": 1,
+    "order_id": "2000016555250828",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 22,
+    "created_at": "2026-05-25T14:31:08.192Z",
+    "ml_account_id": 1,
+    "order_id": "2000016522838320",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 23,
+    "created_at": "2026-05-25T14:31:39.448Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016522012830/feedback"
+  },
+  {
+    "id": 24,
+    "created_at": "2026-05-25T14:33:14.027Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016488851402/feedback"
+  },
+  {
+    "id": 25,
+    "created_at": "2026-05-25T14:33:29.316Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016534206106/feedback"
+  },
+  {
+    "id": 26,
+    "created_at": "2026-05-25T14:33:58.966Z",
+    "ml_account_id": 1,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: messages. Recurso: 019e5f8da26b71178e42530b57e0b231"
+  },
+  {
+    "id": 27,
+    "created_at": "2026-05-25T14:34:10.012Z",
+    "ml_account_id": 1,
+    "order_id": "2000016539808878",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 28,
+    "created_at": "2026-05-25T14:34:16.666Z",
+    "ml_account_id": 1,
+    "order_id": "2000016488851402",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 29,
+    "created_at": "2026-05-25T14:34:24.767Z",
+    "ml_account_id": 1,
+    "order_id": "2000016534206106",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 30,
+    "created_at": "2026-05-25T14:34:30.022Z",
+    "ml_account_id": 1,
+    "order_id": "2000016522838320",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 31,
+    "created_at": "2026-05-25T14:34:39.255Z",
+    "ml_account_id": 1,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: messages. Recurso: 019e5f8f241f75acbd44d59122c1fcce"
+  },
+  {
+    "id": 32,
+    "created_at": "2026-05-25T14:35:17.701Z",
+    "ml_account_id": 1,
+    "order_id": "2000016522838320",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 33,
+    "created_at": "2026-05-25T14:37:34.509Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016488851402/feedback"
+  },
+  {
+    "id": 34,
+    "created_at": "2026-05-25T14:37:48.019Z",
+    "ml_account_id": 1,
+    "order_id": "2000016488851402",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 35,
+    "created_at": "2026-05-25T14:38:01.750Z",
+    "ml_account_id": 1,
+    "order_id": "2000016490396618",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 36,
+    "created_at": "2026-05-25T14:38:33.428Z",
+    "ml_account_id": 1,
+    "order_id": "2000016555250828",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 37,
+    "created_at": "2026-05-25T14:38:45.771Z",
+    "ml_account_id": 1,
+    "order_id": "2000016488851402",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 38,
+    "created_at": "2026-05-25T14:38:53.301Z",
+    "ml_account_id": 1,
+    "order_id": "2000016555250828",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 39,
+    "created_at": "2026-05-25T14:39:16.560Z",
+    "ml_account_id": 1,
+    "order_id": "2000016555110262",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 40,
+    "created_at": "2026-05-25T14:40:22.980Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016539808878/feedback"
+  },
+  {
+    "id": 41,
+    "created_at": "2026-05-25T14:41:54.980Z",
+    "ml_account_id": 1,
+    "order_id": "2000016539808878",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 42,
+    "created_at": "2026-05-25T14:42:14.534Z",
+    "ml_account_id": 1,
+    "order_id": "2000016522838320",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 43,
+    "created_at": "2026-05-25T14:43:03.921Z",
+    "ml_account_id": 1,
+    "order_id": "2000016534206106",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 44,
+    "created_at": "2026-05-25T14:43:14.685Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016522012830/feedback"
+  },
+  {
+    "id": 45,
+    "created_at": "2026-05-25T14:45:35.346Z",
+    "ml_account_id": 1,
+    "order_id": "2000016490396618",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 46,
+    "created_at": "2026-05-25T14:46:00.576Z",
+    "ml_account_id": 1,
+    "order_id": "2000016488851402",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 47,
+    "created_at": "2026-05-25T14:46:32.112Z",
+    "ml_account_id": 1,
+    "order_id": "2000016555110262",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 48,
+    "created_at": "2026-05-25T14:46:51.607Z",
+    "ml_account_id": 1,
+    "order_id": "2000016488851402",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 49,
+    "created_at": "2026-05-25T14:47:18.339Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016539808878/feedback"
+  },
+  {
+    "id": 50,
+    "created_at": "2026-05-25T14:47:24.373Z",
+    "ml_account_id": 1,
+    "order_id": "2000016555250828",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 51,
+    "created_at": "2026-05-25T14:49:37.137Z",
+    "ml_account_id": 1,
+    "order_id": "2000016522838320",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 52,
+    "created_at": "2026-05-25T14:51:03.096Z",
+    "ml_account_id": 1,
+    "order_id": "2000016534206106",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 53,
+    "created_at": "2026-05-25T14:51:21.195Z",
+    "ml_account_id": 1,
+    "order_id": "2000016522838320",
+    "topic": "orders_v2",
+    "status": "error",
+    "log_message": "Erro ao processar notificação de venda: Erro ao obter ordem"
+  },
+  {
+    "id": 54,
+    "created_at": "2026-05-25T14:59:09.203Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016490396618/feedback"
+  },
+  {
+    "id": 55,
+    "created_at": "2026-05-25T14:59:27.762Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016490396618/feedback"
+  },
+  {
+    "id": 56,
+    "created_at": "2026-05-25T16:03:32.276Z",
+    "ml_account_id": 1,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: messages. Recurso: 019e5fe06f1677e69c506e93ee04b951"
+  },
+  {
+    "id": 57,
+    "created_at": "2026-05-25T16:29:21.926Z",
+    "ml_account_id": 1,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: messages. Recurso: 019e5f8bcdc776d4beab338282d0294d"
+  },
+  {
+    "id": 58,
+    "created_at": "2026-05-25T16:31:33.496Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016168783056/feedback"
+  },
+  {
+    "id": 59,
+    "created_at": "2026-05-25T18:16:31.319Z",
+    "ml_account_id": 1,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: messages. Recurso: 019e5efe37b0705b84fffb3b1692d012"
+  },
+  {
+    "id": 60,
+    "created_at": "2026-05-25T18:36:34.443Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016522838320/feedback"
+  },
+  {
+    "id": 61,
+    "created_at": "2026-05-25T18:36:34.505Z",
+    "ml_account_id": 1,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016522838320/feedback"
+  },
+  {
+    "id": 62,
+    "created_at": "2026-05-25T18:36:46.193Z",
+    "ml_account_id": 1,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/160148605334"
+  }
+]

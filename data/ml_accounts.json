@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "created_at": "2026-05-22T19:26:16.825Z",
+    "user_id": 1,
+    "nickname": "ML Doctor Jhoq.",
+    "app_id": "7751052017023270",
+    "secret_key": "o4Yi4mtpVgVQPiHgx1ug51ZER9dAKDSf",
+    "notifications_enabled": 1,
+    "notify_other_topics": 1,
+    "notification_emails": "deyvisonvinicius30@gmail.com",
+    "access_token": "APP_USR-7751052017023270-053018-1875f35e6c8db52e7d439801188bdc25-3081727995",
+    "refresh_token": "TG-6a1b69f8f6dc920001933771-3081727995",
+    "token_expires_at": "1780203098344",
+    "ml_user_id": "3081727995"
+  },
+  {
+    "id": 2,
+    "created_at": "2026-05-25T15:36:00.571Z",
+    "user_id": 1,
+    "nickname": "ML Thay",
+    "app_id": "23762102384724",
+    "secret_key": "pzmSI7zAOyfHTcZalG3BPVF9lPl3SVsU",
+    "notifications_enabled": 1,
+    "notify_other_topics": 1,
+    "notification_emails": "jhoquitansantos@gmail.com, deyvisonvinicius30@gmail.com",
+    "access_token": "APP_USR-23762102384724-053018-c430f60a392c7abccfc553b74a2ec8f6-3063847286",
+    "refresh_token": "TG-6a1b69f974d7db0001bb6923-3063847286",
+    "token_expires_at": "1780203098817",
+    "ml_user_id": "3063847286"
+  }
+]
