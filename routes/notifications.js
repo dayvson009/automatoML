@@ -114,7 +114,7 @@ router.post('/', async (req, res) => {
     const messageId = resource.includes('/') ? resource.split('/').pop() : resource;
     
     try {
-      const messageDetail = await getMessage(messageId, account.access_token);
+      const messageDetail = await getMessage(messageId, account.ml_user_id, account.access_token);
       
       // Se a mensagem veio do comprador (diferente do ml_user_id do vendedor)
       if (String(messageDetail.from.user_id) !== String(account.ml_user_id)) {

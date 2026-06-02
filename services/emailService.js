@@ -15,14 +15,45 @@ const sendNotificationEmail = async (toEmails, subject, text) => {
     return;
   }
 
-  // Transportador do Nodemailer para Gmail
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: emailUser,
-      pass: emailPass,
-    },
-  });
+  const emailService = process.env.EMAIL_SERVICE;
+  const emailHost = process.env.EMAIL_HOST;
+  const emailPort = process.env.EMAIL_PORT ? Number(process.env.EMAIL_PORT) : null;
+  const emailSecure = process.env.EMAIL_SECURE !== undefined ? process.env.EMAIL_SECURE === 'true' : null;
+
+  let transportConfig;
+
+  if (emailService) {
+    transportConfig = {
+      service: emailService,
+      auth: {
+        user: emailUser,
+        pass: emailPass,
+      },
+    };
+  } else if (emailHost) {
+    transportConfig = {
+      host: emailHost,
+      port: emailPort || 587,
+      secure: emailSecure !== null ? emailSecure : (emailPort === 465),
+      auth: {
+        user: emailUser,
+        pass: emailPass,
+      },
+    };
+  } else {
+    // Default fallback to Gmail SMTP over SSL (Port 465) which is typically more open in cloud/Docker host environments
+    transportConfig = {
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: emailUser,
+        pass: emailPass,
+      },
+    };
+  }
+
+  const transporter = nodemailer.createTransport(transportConfig);
 
   const mailOptions = {
     from: `"Alerta ML SaaS" <${emailUser}>`,

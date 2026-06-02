@@ -97,5 +97,23 @@
     "message_text": "Me envie seu e-mail para enviarmos o link do programa e todo passo a passo da instalação. pfvr",
     "attachment_path": null,
     "after_seconds": 5
+  },
+  {
+    "id": 12,
+    "created_at": "2026-06-01T23:38:12.182Z",
+    "flow_id": 6,
+    "step_order": 1,
+    "message_text": "Olá {{nameClient}}, tudo bem?",
+    "attachment_path": null,
+    "after_seconds": 8
+  },
+  {
+    "id": 13,
+    "created_at": "2026-06-01T23:38:35.818Z",
+    "flow_id": 6,
+    "step_order": 2,
+    "message_text": "Poderia me enviar seu e-mail para enviarmos seu pedido?",
+    "attachment_path": null,
+    "after_seconds": 5
   }
 ]

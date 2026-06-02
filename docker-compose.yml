@@ -2,7 +2,6 @@ services:
   app:
     build: .
     container_name: ml-automato
-
     restart: unless-stopped
 
     ports:
@@ -10,3 +9,6 @@ services:
 
     env_file:
       - .env
+
+    volumes:
+      - ./data:/app/data

@@ -28,5 +28,20 @@
     "refresh_token": "TG-6a1b69f974d7db0001bb6923-3063847286",
     "token_expires_at": "1780203098817",
     "ml_user_id": "3063847286"
+  },
+  {
+    "id": 3,
+    "created_at": "2026-06-01T23:24:46.884Z",
+    "user_id": 1,
+    "nickname": "ML - Thalita",
+    "app_id": "2827902987073562",
+    "secret_key": "hKMECcKIgNcctpofCzPXEV2MJuyxG4A9",
+    "notifications_enabled": 1,
+    "notify_other_topics": 1,
+    "notification_emails": "deyvisonvinicius30@gmail.com",
+    "access_token": "APP_USR-2827902987073562-060205-fc654062afb12b17bb0423e8ffa60717-288407503",
+    "refresh_token": "TG-6a1ea7daabe8b200016b8d90-288407503",
+    "token_expires_at": "1780415546305",
+    "ml_user_id": "288407503"
   }
 ]

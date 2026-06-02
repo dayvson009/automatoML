@@ -45,9 +45,9 @@ const getMessagesOrderId = async (orderId, sellerId, accessToken) => {
   }
 };
 
-const getMessage = async (messageId, accessToken) => {
+const getMessage = async (messageId, sellerId, accessToken) => {
   try {
-    const response = await axios.get(`https://api.mercadolibre.com/messages/${messageId}`, {
+    const response = await axios.get(`https://api.mercadolibre.com/messages/${messageId}?seller_id=${sellerId}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
