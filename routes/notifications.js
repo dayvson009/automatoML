@@ -111,47 +111,23 @@ router.post('/', async (req, res) => {
       });
     }
   } else if (topic === 'messages') {
-    const messageId = resource.includes('/') ? resource.split('/').pop() : resource;
-    
-    try {
-      const messageDetail = await getMessage(messageId, account.ml_user_id, account.access_token);
-      
-      // Se a mensagem veio do comprador (diferente do ml_user_id do vendedor)
-      if (String(messageDetail.from.user_id) !== String(account.ml_user_id)) {
-        console.log(`Mensagem recebida do cliente para a conta "${account.nickname}". Enviando e-mail...`);
-        
-        db.insert('notifications_log', {
-          ml_account_id: account.id,
-          topic: topic,
-          status: 'info',
-          log_message: `Mensagem recebida do cliente (${messageDetail.from.name || 'Cliente'}). Conteúdo: "${messageDetail.text}"`
-        });
+    const actions = notificacao.actions || [];
+    console.log(`Notificação de mensagens recebida para a conta "${account.nickname}". Ações:`, actions);
 
-        if (account.notification_emails) {
-          const subject = `Nova Mensagem de Cliente - ${account.nickname}`;
-          const text = `Olá!\n\nVocê recebeu uma nova mensagem de um cliente na conta "${account.nickname}".\n\nRemetente: ${messageDetail.from.name || 'Cliente'} (ID: ${messageDetail.from.user_id})\nConteúdo da Mensagem:\n"${messageDetail.text}"\n\nPor favor, acesse seu painel do Mercado Livre para responder manualmente, pois o robô não responderá de forma automática.`;
-          sendNotificationEmail(account.notification_emails, subject, text);
-        }
-      } else {
-        console.log(`Mensagem enviada pela própria conta (${account.nickname}). Ignorando notificação por e-mail para evitar loop.`);
-      }
-    } catch (error) {
-      console.error(`Erro ao obter detalhes da mensagem ${messageId}:`, error);
-      
-      // Fallback: se der erro mas notify_other_topics estiver ativado, envia e-mail genérico
-      if (account.notify_other_topics === 1) {
-        db.insert('notifications_log', {
-          ml_account_id: account.id,
-          topic: topic,
-          status: 'error',
-          log_message: `Erro ao obter detalhes da mensagem ${messageId}. Enviando notificação genérica.`
-        });
+    // Salvar no log de notificações
+    db.insert('notifications_log', {
+      ml_account_id: account.id,
+      topic: topic,
+      status: 'info',
+      log_message: `Notificação de mensagens recebida. Ação: ${actions.join(', ') || 'N/A'}. Recurso: ${resource}`
+    });
 
-        if (account.notification_emails) {
-          const subject = `Nova Notificação (${topic}) - ${account.nickname}`;
-          const text = `Olá!\n\nUma nova notificação do tópico "${topic}" foi recebida na conta "${account.nickname}".\n\nRecurso: ${resource}\n\nOcorreu um erro ao obter detalhes da mensagem, mas você pode verificar diretamente no painel do Mercado Livre.`;
-          sendNotificationEmail(account.notification_emails, subject, text);
-        }
+    // Apenas enviar e-mail se for uma nova mensagem criada
+    if (actions.includes('created')) {
+      if (account.notification_emails) {
+        const subject = `Nova Mensagem - ${account.nickname}`;
+        const text = `Olá!\n\nUma nova notificação do tópico "messages" (nova mensagem criada) foi recebida na conta "${account.nickname}".\n\nRecurso: ${resource}\n\nPor favor, acesse seu painel do Mercado Livre para verificar.`;
+        sendNotificationEmail(account.notification_emails, subject, text);
       }
     }
   } else {
