@@ -524,5 +524,1424 @@
     "topic": "payments",
     "status": "info",
     "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/160148605334"
+  },
+  {
+    "id": 63,
+    "created_at": "2026-06-02T14:54:38.632Z",
+    "ml_account_id": 3,
+    "topic": "messages",
+    "status": "error",
+    "log_message": "Erro ao obter detalhes da mensagem 019e88d453f07e6d99dc12ff2776b36a. Enviando notificação genérica."
+  },
+  {
+    "id": 64,
+    "created_at": "2026-06-02T14:58:31.004Z",
+    "ml_account_id": 3,
+    "topic": "messages",
+    "status": "error",
+    "log_message": "Erro ao obter detalhes da mensagem 019e8811932a7a3c9c30563c9bd38dce. Enviando notificação genérica."
+  },
+  {
+    "id": 65,
+    "created_at": "2026-06-02T14:59:25.715Z",
+    "ml_account_id": 3,
+    "topic": "messages",
+    "status": "error",
+    "log_message": "Erro ao obter detalhes da mensagem 019e88d453f07e6d99dc12ff2776b36a. Enviando notificação genérica."
+  },
+  {
+    "id": 66,
+    "created_at": "2026-06-02T21:12:06.957Z",
+    "ml_account_id": 3,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016616507246/feedback"
+  },
+  {
+    "id": 67,
+    "created_at": "2026-06-02T21:12:12.958Z",
+    "ml_account_id": 3,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016616507246/feedback"
+  },
+  {
+    "id": 68,
+    "created_at": "2026-06-02T21:43:51.400Z",
+    "ml_account_id": 3,
+    "topic": "questions",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: questions. Recurso: /questions/13595021643"
+  },
+  {
+    "id": 69,
+    "created_at": "2026-06-02T21:50:55.886Z",
+    "ml_account_id": 3,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016616507246/feedback"
+  },
+  {
+    "id": 70,
+    "created_at": "2026-06-02T21:50:56.491Z",
+    "ml_account_id": 3,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016616507246/feedback"
+  },
+  {
+    "id": 71,
+    "created_at": "2026-06-02T22:24:04.272Z",
+    "ml_account_id": 3,
+    "topic": "questions",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: questions. Recurso: /questions/13595021643"
+  },
+  {
+    "id": 72,
+    "created_at": "2026-06-02T23:29:23.228Z",
+    "ml_account_id": 3,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/160301492437"
+  },
+  {
+    "id": 73,
+    "created_at": "2026-06-03T02:38:54.972Z",
+    "ml_account_id": 3,
+    "topic": "questions",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: questions. Recurso: /questions/13595231901"
+  },
+  {
+    "id": 74,
+    "created_at": "2026-06-03T02:44:36.706Z",
+    "ml_account_id": 3,
+    "topic": "questions",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: questions. Recurso: /questions/13595987306"
+  },
+  {
+    "id": 75,
+    "created_at": "2026-06-03T02:58:08.073Z",
+    "ml_account_id": 3,
+    "topic": "questions",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: questions. Recurso: /questions/13595987306"
+  },
+  {
+    "id": 76,
+    "created_at": "2026-06-03T02:58:14.925Z",
+    "ml_account_id": 3,
+    "topic": "questions",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: questions. Recurso: /questions/13595231901"
+  },
+  {
+    "id": 77,
+    "created_at": "2026-06-03T11:06:38.853Z",
+    "ml_account_id": 3,
+    "topic": "questions",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: questions. Recurso: /questions/13596086030"
+  },
+  {
+    "id": 78,
+    "created_at": "2026-06-03T14:02:49.228Z",
+    "ml_account_id": 3,
+    "topic": "questions",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: questions. Recurso: /questions/13596086030"
+  },
+  {
+    "id": 79,
+    "created_at": "2026-06-03T14:33:47.692Z",
+    "ml_account_id": 3,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/157821762490"
+  },
+  {
+    "id": 80,
+    "created_at": "2026-06-03T16:24:36.934Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/161534924033"
+  },
+  {
+    "id": 81,
+    "created_at": "2026-06-03T16:24:40.009Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Suite Do Coreldraw 2026 V27 - Serial De Ativação\" (ID: MLB6533314390). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 82,
+    "created_at": "2026-06-03T16:24:43.643Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Suite Do Coreldraw 2026 V27 - Serial De Ativação\" (ID: MLB6533314390). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 83,
+    "created_at": "2026-06-03T16:24:43.720Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Suite Do Coreldraw 2026 V27 - Serial De Ativação\" (ID: MLB6533314390). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 84,
+    "created_at": "2026-06-03T16:24:46.175Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Suite Do Coreldraw 2026 V27 - Serial De Ativação\" (ID: MLB6533314390). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 85,
+    "created_at": "2026-06-03T16:24:46.426Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Suite Do Coreldraw 2026 V27 - Serial De Ativação\" (ID: MLB6533314390). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 86,
+    "created_at": "2026-06-03T16:24:50.690Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 87,
+    "created_at": "2026-06-03T16:24:54.361Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 88,
+    "created_at": "2026-06-03T16:24:54.415Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 89,
+    "created_at": "2026-06-03T16:24:54.447Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 90,
+    "created_at": "2026-06-03T16:24:56.885Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 91,
+    "created_at": "2026-06-03T16:24:57.097Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 92,
+    "created_at": "2026-06-03T16:24:58.103Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 93,
+    "created_at": "2026-06-03T16:24:58.121Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 94,
+    "created_at": "2026-06-03T16:24:59.149Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 3 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 95,
+    "created_at": "2026-06-03T16:25:00.581Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 96,
+    "created_at": "2026-06-03T16:25:00.792Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 97,
+    "created_at": "2026-06-03T16:25:02.818Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 3 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 98,
+    "created_at": "2026-06-03T16:25:02.864Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 3 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 99,
+    "created_at": "2026-06-03T16:25:02.917Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e4d722e7c21920c37264a2818e1"
+  },
+  {
+    "id": 100,
+    "created_at": "2026-06-03T16:25:04.553Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e4d7a487eea8d7bdb8933ec50a2"
+  },
+  {
+    "id": 101,
+    "created_at": "2026-06-03T16:25:05.273Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 3 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 102,
+    "created_at": "2026-06-03T16:25:05.518Z",
+    "ml_account_id": 2,
+    "order_id": "2000016757661538",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 3 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 103,
+    "created_at": "2026-06-03T16:25:08.730Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e4d84a57290ac23277aaa51271a"
+  },
+  {
+    "id": 104,
+    "created_at": "2026-06-03T16:26:05.915Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e4e62f07ec49529a09083fa2bff"
+  },
+  {
+    "id": 105,
+    "created_at": "2026-06-03T16:30:13.765Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e5228ad709995dd2fa05634eb26"
+  },
+  {
+    "id": 106,
+    "created_at": "2026-06-03T16:54:00.157Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e67f912762290bb4d8c590244c9"
+  },
+  {
+    "id": 107,
+    "created_at": "2026-06-03T16:55:27.416Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e694a4d7123923747b2c1977a80"
+  },
+  {
+    "id": 108,
+    "created_at": "2026-06-03T16:56:38.396Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e6a29ef7f2d9f6a0185f174fbc0"
+  },
+  {
+    "id": 109,
+    "created_at": "2026-06-03T17:02:13.314Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e6f79ea7e63a7468680e7a0ad76"
+  },
+  {
+    "id": 110,
+    "created_at": "2026-06-03T17:03:16.759Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e706df97b49be35a23c6274d67e"
+  },
+  {
+    "id": 111,
+    "created_at": "2026-06-03T17:18:17.637Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e7e351a73c88192831aea6903d8"
+  },
+  {
+    "id": 112,
+    "created_at": "2026-06-03T17:18:59.199Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e7ecfbe7cb79cb215d17ad3a7e7"
+  },
+  {
+    "id": 113,
+    "created_at": "2026-06-03T17:21:38.058Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e813cf07d99b5213f4d44e1154d"
+  },
+  {
+    "id": 114,
+    "created_at": "2026-06-03T17:22:03.115Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e81a448747dacf693df6e96c5a8"
+  },
+  {
+    "id": 115,
+    "created_at": "2026-06-03T17:23:45.289Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e83259975e6889b0e4bceea94f9"
+  },
+  {
+    "id": 116,
+    "created_at": "2026-06-03T17:23:54.972Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e83477a7d5ba8f0c82615f6e46e"
+  },
+  {
+    "id": 117,
+    "created_at": "2026-06-03T17:25:54.097Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e852a1377f2ba9896f8381681da"
+  },
+  {
+    "id": 118,
+    "created_at": "2026-06-03T17:26:57.980Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e86231c7d08bcce9faf9f04283e"
+  },
+  {
+    "id": 119,
+    "created_at": "2026-06-03T17:36:24.695Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e8ebc8e7828a1a06280f94d7559"
+  },
+  {
+    "id": 120,
+    "created_at": "2026-06-03T17:49:51.499Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e9b0dc1734983c579a1c8ff1196"
+  },
+  {
+    "id": 121,
+    "created_at": "2026-06-03T17:50:20.027Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e9b70e1754898b2fdfdae119582"
+  },
+  {
+    "id": 122,
+    "created_at": "2026-06-03T17:50:48.064Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e9bd4447326aca0eec8a3530c95"
+  },
+  {
+    "id": 123,
+    "created_at": "2026-06-03T17:51:04.981Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e9c3795766a9f1d11f5e2adef5c"
+  },
+  {
+    "id": 124,
+    "created_at": "2026-06-03T17:52:07.820Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e9d17ab71fc8721fde4de112d9b"
+  },
+  {
+    "id": 125,
+    "created_at": "2026-06-03T17:52:20.484Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e9d56017629a2f1353c80897133"
+  },
+  {
+    "id": 126,
+    "created_at": "2026-06-03T17:52:30.558Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e9d77c575a0813542451cdb0869"
+  },
+  {
+    "id": 127,
+    "created_at": "2026-06-03T17:53:27.557Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e9e50a8718aa25e196af3799db0"
+  },
+  {
+    "id": 128,
+    "created_at": "2026-06-03T17:53:39.193Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e9e93fd7227b644b6da24e73e6a"
+  },
+  {
+    "id": 129,
+    "created_at": "2026-06-03T17:54:19.500Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8e9f2e21719c85df19524f35e758"
+  },
+  {
+    "id": 130,
+    "created_at": "2026-06-03T17:54:57.113Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8e9f859d7832ac19604d5389470c"
+  },
+  {
+    "id": 131,
+    "created_at": "2026-06-03T17:56:00.529Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8ea0ae6371d1a209f326d6b6e589"
+  },
+  {
+    "id": 132,
+    "created_at": "2026-06-03T18:02:21.237Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e8ea66bb17561b84947e184a5b9d7"
+  },
+  {
+    "id": 133,
+    "created_at": "2026-06-03T20:37:51.995Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8eacc10578f6bfd8b3f12267ad64"
+  },
+  {
+    "id": 134,
+    "created_at": "2026-06-04T13:08:57.507Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e8b628264711eb2f5139989f0086c"
+  },
+  {
+    "id": 135,
+    "created_at": "2026-06-04T13:18:39.416Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e92c92052750da53013b1b178f807"
+  },
+  {
+    "id": 136,
+    "created_at": "2026-06-04T13:22:30.970Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/162224953084"
+  },
+  {
+    "id": 137,
+    "created_at": "2026-06-04T13:23:00.852Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e92cd14e3723499da0be6c03a820b"
+  },
+  {
+    "id": 138,
+    "created_at": "2026-06-04T13:24:21.784Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e92ce54fe794abf6e6f679374eb71"
+  },
+  {
+    "id": 139,
+    "created_at": "2026-06-04T18:09:24.530Z",
+    "ml_account_id": 3,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/160507469531"
+  },
+  {
+    "id": 140,
+    "created_at": "2026-06-05T00:03:37.645Z",
+    "ml_account_id": 2,
+    "topic": "questions",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: questions. Recurso: /questions/13596592079"
+  },
+  {
+    "id": 141,
+    "created_at": "2026-06-05T00:07:05.566Z",
+    "ml_account_id": 2,
+    "topic": "questions",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: questions. Recurso: /questions/13596592079"
+  },
+  {
+    "id": 142,
+    "created_at": "2026-06-05T00:14:31.179Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/161769136947"
+  },
+  {
+    "id": 143,
+    "created_at": "2026-06-05T00:16:16.588Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/161769416493"
+  },
+  {
+    "id": 144,
+    "created_at": "2026-06-05T00:18:30.382Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/161769609615"
+  },
+  {
+    "id": 145,
+    "created_at": "2026-06-05T00:19:32.542Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e95262a5e76e88804cf1c42d063f7"
+  },
+  {
+    "id": 146,
+    "created_at": "2026-06-05T00:19:43.815Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e95264fc875a58248ed21877a0e67"
+  },
+  {
+    "id": 147,
+    "created_at": "2026-06-05T00:19:45.918Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e95266ae47ae980bda6fa3865dc65"
+  },
+  {
+    "id": 148,
+    "created_at": "2026-06-05T00:20:02.701Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e9526b0d4725fb0c1cbe196f5c5cf"
+  },
+  {
+    "id": 149,
+    "created_at": "2026-06-05T00:20:48.218Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e952758c97193945932ca2e2c8911"
+  },
+  {
+    "id": 150,
+    "created_at": "2026-06-05T00:21:06.531Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e95279efe79d587d947694bcbc0a2"
+  },
+  {
+    "id": 151,
+    "created_at": "2026-06-05T00:21:27.207Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e9527df51704db35a154047ebdfbd"
+  },
+  {
+    "id": 152,
+    "created_at": "2026-06-05T00:21:39.257Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e952812e0731ca8e21a7e016174cb"
+  },
+  {
+    "id": 153,
+    "created_at": "2026-06-05T00:21:49.284Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e9528366f78be8bdfd493885064f5"
+  },
+  {
+    "id": 154,
+    "created_at": "2026-06-05T00:21:55.307Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e95285f217e2fb96c59c44c8899ef"
+  },
+  {
+    "id": 155,
+    "created_at": "2026-06-05T00:22:27.207Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e9528d2337791883422bed0163c68"
+  },
+  {
+    "id": 156,
+    "created_at": "2026-06-05T00:23:10.837Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e952982b67133941d52332f1f0964"
+  },
+  {
+    "id": 157,
+    "created_at": "2026-06-05T00:37:23.699Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/161769609615"
+  },
+  {
+    "id": 158,
+    "created_at": "2026-06-05T00:37:40.231Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e9536c9c77779872201e6ea461a18"
+  },
+  {
+    "id": 159,
+    "created_at": "2026-06-05T00:38:35.847Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e9537973f73be9ad14f5ed8326575"
+  },
+  {
+    "id": 160,
+    "created_at": "2026-06-05T00:40:29.261Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e9539634b7bd0ac47e908777d7735"
+  },
+  {
+    "id": 161,
+    "created_at": "2026-06-05T00:41:35.304Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e953a60ed714b96b865857204b63d"
+  },
+  {
+    "id": 162,
+    "created_at": "2026-06-05T00:45:02.819Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e953d7ebf72feb9f1f98ff2719709"
+  },
+  {
+    "id": 163,
+    "created_at": "2026-06-05T00:45:30.814Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e953de674720e9182b028fddd5b1e"
+  },
+  {
+    "id": 164,
+    "created_at": "2026-06-05T00:48:44.873Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e9540e21374ff89b39f743b6500b0"
+  },
+  {
+    "id": 165,
+    "created_at": "2026-06-05T00:49:07.971Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e9541491971a285f87efb428d68c1"
+  },
+  {
+    "id": 166,
+    "created_at": "2026-06-05T00:50:05.167Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e954226f87a67b468e61292139413"
+  },
+  {
+    "id": 167,
+    "created_at": "2026-06-05T00:50:45.960Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e9542b58879468f248555650b7ddd"
+  },
+  {
+    "id": 168,
+    "created_at": "2026-06-05T00:51:39.286Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e954391a17303b4ede4004f0df1ea"
+  },
+  {
+    "id": 169,
+    "created_at": "2026-06-05T00:53:02.229Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e9544dedd7f28afa9f36857327450"
+  },
+  {
+    "id": 170,
+    "created_at": "2026-06-05T01:08:30.433Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e9552fe2a790eb28876e76a79d711"
+  },
+  {
+    "id": 171,
+    "created_at": "2026-06-05T01:25:27.813Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e956289af7584a16a48a9a873561d"
+  },
+  {
+    "id": 172,
+    "created_at": "2026-06-05T01:25:56.715Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e9562ef1e7ef0ad95b45fc4325042"
+  },
+  {
+    "id": 173,
+    "created_at": "2026-06-05T01:26:05.081Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e956318677578af3c15fd7126856b"
+  },
+  {
+    "id": 174,
+    "created_at": "2026-06-05T01:26:24.897Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e956359967037a1c961628a85da8c"
+  },
+  {
+    "id": 175,
+    "created_at": "2026-06-05T01:26:42.956Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e9563b23e7671958cb9cadcd30cca"
+  },
+  {
+    "id": 176,
+    "created_at": "2026-06-05T10:57:06.076Z",
+    "ml_account_id": 3,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016716820996/feedback"
+  },
+  {
+    "id": 177,
+    "created_at": "2026-06-05T10:57:11.056Z",
+    "ml_account_id": 3,
+    "topic": "orders_feedback",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: orders_feedback. Recurso: /orders/2000016716820996/feedback"
+  },
+  {
+    "id": 178,
+    "created_at": "2026-06-05T20:36:19.625Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e99802e0b736bb7d260e7d8a8674a"
+  },
+  {
+    "id": 179,
+    "created_at": "2026-06-05T20:41:07.969Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e998494627217896b7b0ac1d4d1d4"
+  },
+  {
+    "id": 180,
+    "created_at": "2026-06-05T21:12:21.555Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Suite Do Coreldraw 2026 V27 - Serial De Ativação\" (ID: MLB6533314390). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 181,
+    "created_at": "2026-06-05T21:12:21.973Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/161913463909"
+  },
+  {
+    "id": 182,
+    "created_at": "2026-06-05T21:12:23.681Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Suite Do Coreldraw 2026 V27 - Serial De Ativação\" (ID: MLB6533314390). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 183,
+    "created_at": "2026-06-05T21:12:24.575Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Suite Do Coreldraw 2026 V27 - Serial De Ativação\" (ID: MLB6533314390). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 184,
+    "created_at": "2026-06-05T21:12:25.456Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Suite Do Coreldraw 2026 V27 - Serial De Ativação\" (ID: MLB6533314390). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 185,
+    "created_at": "2026-06-05T21:12:32.276Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 186,
+    "created_at": "2026-06-05T21:12:34.410Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 187,
+    "created_at": "2026-06-05T21:12:35.248Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e99a16f207cd5b3e7406971f88c97"
+  },
+  {
+    "id": 188,
+    "created_at": "2026-06-05T21:12:35.257Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 189,
+    "created_at": "2026-06-05T21:12:35.989Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 190,
+    "created_at": "2026-06-05T21:12:36.155Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 191,
+    "created_at": "2026-06-05T21:12:38.090Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 192,
+    "created_at": "2026-06-05T21:12:38.932Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 193,
+    "created_at": "2026-06-05T21:12:39.484Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e99a180cc7103b10e2b8782303974"
+  },
+  {
+    "id": 194,
+    "created_at": "2026-06-05T21:12:39.684Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e99a180cc7103b10e2b8782303974"
+  },
+  {
+    "id": 195,
+    "created_at": "2026-06-05T21:12:39.843Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 196,
+    "created_at": "2026-06-05T21:12:39.957Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e99a180cc7103b10e2b8782303974"
+  },
+  {
+    "id": 197,
+    "created_at": "2026-06-05T21:12:40.671Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 3 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 198,
+    "created_at": "2026-06-05T21:12:41.293Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e99a1879874c0972945583aafad1c"
+  },
+  {
+    "id": 199,
+    "created_at": "2026-06-05T21:12:42.837Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 3 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 200,
+    "created_at": "2026-06-05T21:12:42.893Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e99a1879874c0972945583aafad1c"
+  },
+  {
+    "id": 201,
+    "created_at": "2026-06-05T21:12:43.626Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 3 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 202,
+    "created_at": "2026-06-05T21:12:44.559Z",
+    "ml_account_id": 2,
+    "order_id": "2000016795737250",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 3 do fluxo \"Corel Draw v27\""
+  },
+  {
+    "id": 203,
+    "created_at": "2026-06-05T21:12:46.232Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e99a196ca771d82c97fe015c661d1"
+  },
+  {
+    "id": 204,
+    "created_at": "2026-06-05T21:13:04.327Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e99a1d26574dd9151350c93ac5594"
+  },
+  {
+    "id": 205,
+    "created_at": "2026-06-05T21:16:47.146Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e99a22c1b7456b2d918ff67d5d5b3"
+  },
+  {
+    "id": 206,
+    "created_at": "2026-06-05T21:18:17.817Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e99a697057a9380357556e302e85d"
+  },
+  {
+    "id": 207,
+    "created_at": "2026-06-05T21:31:05.691Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/161913463909"
+  },
+  {
+    "id": 208,
+    "created_at": "2026-06-05T21:40:28.242Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e99b601c67a76b82aa52e40a29be9"
+  },
+  {
+    "id": 209,
+    "created_at": "2026-06-05T21:40:41.410Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e99bb19557625926f21b3822fc007"
+  },
+  {
+    "id": 210,
+    "created_at": "2026-06-05T21:41:14.715Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e99bba1847e12b69f7b9df2a6a8e5"
+  },
+  {
+    "id": 211,
+    "created_at": "2026-06-06T00:52:36.046Z",
+    "ml_account_id": 3,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/160735035249"
+  },
+  {
+    "id": 212,
+    "created_at": "2026-06-06T00:54:37.799Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e998915d37072bfe23d7648fe0767"
+  },
+  {
+    "id": 213,
+    "created_at": "2026-06-06T06:21:08.746Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/162784043790"
+  },
+  {
+    "id": 214,
+    "created_at": "2026-06-06T06:21:13.211Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Camtasia Original Pode Atualizar+ativação Perm@nent V.2026\" (ID: MLB6530008302). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 215,
+    "created_at": "2026-06-06T06:21:13.214Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Camtasia Original Pode Atualizar+ativação Perm@nent V.2026\" (ID: MLB6530008302). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 216,
+    "created_at": "2026-06-06T06:21:13.967Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Camtasia Original Pode Atualizar+ativação Perm@nent V.2026\" (ID: MLB6530008302). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 217,
+    "created_at": "2026-06-06T06:21:16.045Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Camtasia Original Pode Atualizar+ativação Perm@nent V.2026\" (ID: MLB6530008302). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 218,
+    "created_at": "2026-06-06T06:21:17.083Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "processing",
+    "log_message": "Nova venda aprovada: \"Camtasia Original Pode Atualizar+ativação Perm@nent V.2026\" (ID: MLB6530008302). Iniciando o fluxo de atendimento."
+  },
+  {
+    "id": 219,
+    "created_at": "2026-06-06T06:21:23.932Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Camtasia Original\""
+  },
+  {
+    "id": 220,
+    "created_at": "2026-06-06T06:21:23.950Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Camtasia Original\""
+  },
+  {
+    "id": 221,
+    "created_at": "2026-06-06T06:21:24.716Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Camtasia Original\""
+  },
+  {
+    "id": 222,
+    "created_at": "2026-06-06T06:21:26.713Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Camtasia Original\""
+  },
+  {
+    "id": 223,
+    "created_at": "2026-06-06T06:21:27.821Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 1 do fluxo \"Camtasia Original\""
+  },
+  {
+    "id": 224,
+    "created_at": "2026-06-06T06:21:29.600Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Camtasia Original\""
+  },
+  {
+    "id": 225,
+    "created_at": "2026-06-06T06:21:29.659Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Camtasia Original\""
+  },
+  {
+    "id": 226,
+    "created_at": "2026-06-06T06:21:30.397Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Camtasia Original\""
+  },
+  {
+    "id": 227,
+    "created_at": "2026-06-06T06:21:31.917Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e9b97ff5572db8d00e18159c5841a"
+  },
+  {
+    "id": 228,
+    "created_at": "2026-06-06T06:21:32.405Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Camtasia Original\""
+  },
+  {
+    "id": 229,
+    "created_at": "2026-06-06T06:21:33.506Z",
+    "ml_account_id": 2,
+    "order_id": "2000016802013936",
+    "topic": "orders_v2",
+    "status": "success",
+    "log_message": "Enviado passo 2 do fluxo \"Camtasia Original\""
+  },
+  {
+    "id": 230,
+    "created_at": "2026-06-06T06:21:37.635Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: read. Recurso: 019e9b980b7b79a4979d0a58c2a4d842"
+  },
+  {
+    "id": 231,
+    "created_at": "2026-06-06T06:22:23.703Z",
+    "ml_account_id": 2,
+    "topic": "messages",
+    "status": "info",
+    "log_message": "Notificação de mensagens recebida. Ação: created. Recurso: 019e9b98c23d738aa08b1029a4b7a3a9"
+  },
+  {
+    "id": 232,
+    "created_at": "2026-06-06T06:41:29.942Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/162784043790"
+  },
+  {
+    "id": 233,
+    "created_at": "2026-06-06T10:45:21.614Z",
+    "ml_account_id": 2,
+    "topic": "payments",
+    "status": "info",
+    "log_message": "Notificação recebida para o tópico: payments. Recurso: /collections/160885101305"
   }
 ]
