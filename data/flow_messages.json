@@ -1,20 +1,119 @@
 [
   {
     "id": 1,
-    "flow_id": 1,
+    "created_at": "2026-05-25T12:20:50.142Z",
+    "flow_id": 2,
     "step_order": 1,
-    "message_text": "Olá {{nameClient}}! Obrigado por comprar o Corel Draw.",
+    "message_text": "Olá {{nameClient}}.",
     "attachment_path": null,
-    "after_seconds": 1,
-    "created_at": "2026-06-06T11:22:27.189Z"
+    "after_seconds": 20
   },
   {
     "id": 2,
-    "flow_id": 1,
+    "created_at": "2026-05-25T12:21:52.507Z",
+    "flow_id": 2,
     "step_order": 2,
-    "message_text": "Seu link de download está pronto! Obrigado.",
+    "message_text": "Me envie seu e-mail para enviarmos o link do programa e todo passo a passo da instalação. pfvr",
     "attachment_path": null,
-    "after_seconds": 2,
-    "created_at": "2026-06-06T11:22:27.190Z"
+    "after_seconds": 10
+  },
+  {
+    "id": 3,
+    "created_at": "2026-05-25T13:20:47.961Z",
+    "flow_id": 3,
+    "step_order": 1,
+    "message_text": "Olá {{nameClient}}.",
+    "attachment_path": null,
+    "after_seconds": 10
+  },
+  {
+    "id": 4,
+    "created_at": "2026-05-25T13:21:11.715Z",
+    "flow_id": 3,
+    "step_order": 2,
+    "message_text": "Já estou preparando seu link para baixar o Proteus.",
+    "attachment_path": null,
+    "after_seconds": 3
+  },
+  {
+    "id": 5,
+    "created_at": "2026-05-25T13:21:33.605Z",
+    "flow_id": 3,
+    "step_order": 3,
+    "message_text": "https://drive.google.com/drive/folders/1aHiVfWmY5X9Oge344rGiV5WPIIcg5sXL\r\n\r\nArquivo Proteus para Download.\r\n\r\n🔓Ao extrair será solicitado uma senha, utilize:\r\n\r\n@c2techoficial\r\n\r\nPara lhe auxiliar, irei deixar um vídeo tutorial ensinando como instalar, todo passo a passo:\r\n\r\nhttps://youtu.be/WNWfCJp4G9A",
+    "attachment_path": null,
+    "after_seconds": 7
+  },
+  {
+    "id": 6,
+    "created_at": "2026-05-25T13:21:45.280Z",
+    "flow_id": 3,
+    "step_order": 4,
+    "message_text": "Lembrando que para que a instalação ocorra bem, é preciso desativar o antivirus.\r\n\r\nQuando instalar nos informe, se tiver algum problema te ajudaremos. 🙏🏻",
+    "attachment_path": null,
+    "after_seconds": 6
+  },
+  {
+    "id": 7,
+    "created_at": "2026-05-25T15:43:51.304Z",
+    "flow_id": 4,
+    "step_order": 1,
+    "message_text": "Olá {{nameClient}}",
+    "attachment_path": null,
+    "after_seconds": 10
+  },
+  {
+    "id": 8,
+    "created_at": "2026-05-25T15:44:10.187Z",
+    "flow_id": 4,
+    "step_order": 2,
+    "message_text": "Poderia me enviar seu e-mail para gerarmos o Serial de Ativação?",
+    "attachment_path": null,
+    "after_seconds": 3
+  },
+  {
+    "id": 9,
+    "created_at": "2026-05-25T15:44:49.654Z",
+    "flow_id": 4,
+    "step_order": 3,
+    "message_text": "Vou te enviar também no mesmo e-mail todo material e instruções da instalação.",
+    "attachment_path": null,
+    "after_seconds": 4
+  },
+  {
+    "id": 10,
+    "created_at": "2026-05-25T15:45:36.007Z",
+    "flow_id": 5,
+    "step_order": 1,
+    "message_text": "Olá {{nameClient}}.",
+    "attachment_path": null,
+    "after_seconds": 10
+  },
+  {
+    "id": 11,
+    "created_at": "2026-05-25T15:45:51.668Z",
+    "flow_id": 5,
+    "step_order": 2,
+    "message_text": "Me envie seu e-mail para enviarmos o link do programa e todo passo a passo da instalação. pfvr",
+    "attachment_path": null,
+    "after_seconds": 5
+  },
+  {
+    "id": 12,
+    "created_at": "2026-06-01T23:38:12.182Z",
+    "flow_id": 6,
+    "step_order": 1,
+    "message_text": "Olá {{nameClient}}, tudo bem?",
+    "attachment_path": null,
+    "after_seconds": 8
+  },
+  {
+    "id": 13,
+    "created_at": "2026-06-01T23:38:35.818Z",
+    "flow_id": 6,
+    "step_order": 2,
+    "message_text": "Poderia me enviar seu e-mail para enviarmos seu pedido?",
+    "attachment_path": null,
+    "after_seconds": 5
   }
 ]
