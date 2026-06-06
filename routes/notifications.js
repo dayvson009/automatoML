@@ -7,6 +7,9 @@ const db = require('../services/db');
 
 const router = express.Router();
 
+// Conjunto em memória para rastrear e travar ordens com fluxos de mensagens ativos
+const activeFlows = new Set();
+
 router.post('/', async (req, res) => {
   const notificacao = req.body;
   console.log('Notificação recebida do Mercado Livre:', notificacao);
@@ -58,58 +61,76 @@ router.post('/', async (req, res) => {
       return res.status(200).send('Já processado.');
     }
 
-    // Delay de 3 segundos para garantir que a API do Mercado Livre esteja atualizada
-    await new Promise(resolve => setTimeout(resolve, 3000));
-
-    try {
-      const detailOrder = await getOrder(orderId, account.access_token);
-
-      // Extrair informações de pagamento e produto
-      const payment = detailOrder.payments && detailOrder.payments[0];
-      const nameProduct = payment ? payment.reason : (detailOrder.order_items && detailOrder.order_items[0] && detailOrder.order_items[0].item.title) || 'Produto sem título';
-      const productId = (detailOrder.order_items && detailOrder.order_items[0] && detailOrder.order_items[0].item.id) || null;
-      const clientId = detailOrder.buyer && detailOrder.buyer.id;
-      const firstNameClient = (detailOrder.buyer && detailOrder.buyer.first_name) || 'Cliente';
-      const lastNameClient = (detailOrder.buyer && detailOrder.buyer.last_name) || '';
-
-      if (payment && payment.status === 'approved') {
-        // Verificar mensagens existentes para garantir que o bot não envie duplicado
-        const messagesThisOrder = await getMessagesOrderId(orderId, account.ml_user_id, account.access_token);
-        const sellerSent = messagesThisOrder.messages && messagesThisOrder.messages.some(m => String(m.from.user_id) === String(account.ml_user_id));
-
-        if (messagesThisOrder.paging.total === 0 || !sellerSent) {
-          // Salvar log inicial de processamento
-          db.insert('notifications_log', {
-            ml_account_id: account.id,
-            order_id: orderId,
-            topic: 'orders_v2',
-            status: 'processing',
-            log_message: `Nova venda aprovada: "${nameProduct}" (ID: ${productId}). Iniciando o fluxo de atendimento.`
-          });
-
-          // Disparar o fluxo de mensagens de forma assíncrona
-          sendFlowMessage(orderId, clientId, firstNameClient, account.id, productId, nameProduct);
-
-          // Enviar alerta por e-mail se houver destinatários cadastrados
-          if (account.notification_emails) {
-            const subject = `Venda Aprovada! - ${account.nickname}`;
-            const text = `Olá!\n\nUma nova venda foi aprovada na conta "${account.nickname}"!\n\nProduto: ${nameProduct}\nCliente: ${firstNameClient} ${lastNameClient}\nID do Pedido: ${orderId}\n\nO fluxo de atendimento sequencial já foi iniciado no chat do Mercado Livre.`;
-            sendNotificationEmail(account.notification_emails, subject, text);
-          }
-        } else {
-          console.log(`O bot já enviou mensagens para a ordem ${orderId}. Ignorando re-envio.`);
-        }
-      }
-    } catch (error) {
-      console.error(`Erro ao processar notificação de venda ${orderId}:`, error);
-      db.insert('notifications_log', {
-        ml_account_id: account.id,
-        order_id: orderId,
-        topic: 'orders_v2',
-        status: 'error',
-        log_message: `Erro ao processar notificação de venda: ${error.message}`
-      });
+    // Verificar se a ordem já está em processamento
+    if (activeFlows.has(orderId)) {
+      console.log(`Ordem ${orderId} já possui um fluxo ativo ou está em processamento.`);
+      return res.status(200).send('Processando.');
     }
+
+    // Trava a ordem em memória antes de qualquer atraso ou requisição HTTP
+    activeFlows.add(orderId);
+
+    // Processamento assíncrono em segundo plano para não bloquear a resposta do webhook
+    const runProcessing = async () => {
+      try {
+        // Delay de 3 segundos para garantir que a API do Mercado Livre esteja atualizada
+        await new Promise(resolve => setTimeout(resolve, 3000));
+
+        const detailOrder = await getOrder(orderId, account.access_token);
+
+        // Extrair informações de pagamento e produto
+        const payment = detailOrder.payments && detailOrder.payments[0];
+        const nameProduct = payment ? payment.reason : (detailOrder.order_items && detailOrder.order_items[0] && detailOrder.order_items[0].item.title) || 'Produto sem título';
+        const productId = (detailOrder.order_items && detailOrder.order_items[0] && detailOrder.order_items[0].item.id) || null;
+        const clientId = detailOrder.buyer && detailOrder.buyer.id;
+        const firstNameClient = (detailOrder.buyer && detailOrder.buyer.first_name) || 'Cliente';
+        const lastNameClient = (detailOrder.buyer && detailOrder.buyer.last_name) || '';
+
+        if (payment && payment.status === 'approved') {
+          // Verificar mensagens existentes para garantir que o bot não envie duplicado
+          const messagesThisOrder = await getMessagesOrderId(orderId, account.ml_user_id, account.access_token);
+          const sellerSent = messagesThisOrder.messages && messagesThisOrder.messages.some(m => String(m.from.user_id) === String(account.ml_user_id));
+
+          if (messagesThisOrder.paging.total === 0 || !sellerSent) {
+            // Salvar log inicial de processamento
+            db.insert('notifications_log', {
+              ml_account_id: account.id,
+              order_id: orderId,
+              topic: 'orders_v2',
+              status: 'processing',
+              log_message: `Nova venda aprovada: "${nameProduct}" (ID: ${productId}). Iniciando o fluxo de atendimento.`
+            });
+
+            // Disparar e aguardar todo o envio do fluxo sequencial (segurando a trava)
+            await sendFlowMessage(orderId, clientId, firstNameClient, account.id, productId, nameProduct);
+
+            // Enviar alerta por e-mail se houver destinatários cadastrados
+            if (account.notification_emails) {
+              const subject = `Venda Aprovada! - ${account.nickname}`;
+              const text = `Olá!\n\nUma nova venda foi aprovada na conta "${account.nickname}"!\n\nProduto: ${nameProduct}\nCliente: ${firstNameClient} ${lastNameClient}\nID do Pedido: ${orderId}\n\nO fluxo de atendimento sequencial já foi iniciado no chat do Mercado Livre.`;
+              sendNotificationEmail(account.notification_emails, subject, text);
+            }
+          } else {
+            console.log(`O bot já enviou mensagens para a ordem ${orderId}. Ignorando re-envio.`);
+          }
+        }
+      } catch (error) {
+        console.error(`Erro ao processar notificação de venda ${orderId}:`, error);
+        db.insert('notifications_log', {
+          ml_account_id: account.id,
+          order_id: orderId,
+          topic: 'orders_v2',
+          status: 'error',
+          log_message: `Erro ao processar notificação de venda: ${error.message}`
+        });
+      } finally {
+        // Garantir que a trava seja liberada sob qualquer circunstância
+        activeFlows.delete(orderId);
+      }
+    };
+
+    // Iniciar processamento em segundo plano
+    runProcessing();
   } else if (topic === 'messages') {
     const actions = notificacao.actions || [];
     console.log(`Notificação de mensagens recebida para a conta "${account.nickname}". Ações:`, actions);
